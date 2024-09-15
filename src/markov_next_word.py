@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
+# Author: Raphael Senn
 
 import numpy as np
-from utils import tokenize_words
+from src.utils import tokenize_words
+
 
 class MarkovNextWord:
     def __init__(self) -> None:
@@ -28,6 +31,7 @@ class MarkovNextWord:
 
     def predict_next_words(self, word: str) -> list[tuple[str, float]]:
         result = [] 
+        word = word.lower() 
         if word in self.word_to_nextwords:
             next_words = list(set(self.word_to_nextwords[word]))
             for next_word in next_words:
@@ -47,13 +51,3 @@ class MarkovNextWord:
                 print(last_word, end=' ')
             else:
                 break
-
-
-mnw = MarkovNextWord()
-mnw.train('GoetheFaust.txt')
-# mnw.train('ALL_eminem.txt')
-# print(mnw.predict_next_words('i'))
-mnw.generate_text("liebe", 20)
-#mnw.train('ALL_eminem.txt')
-# print(mnw.word_to_nextwords)
-# print(mnw.word_to_next_word_prob)
