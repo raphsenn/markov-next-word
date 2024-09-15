@@ -1,0 +1,2 @@
+# Ignore ipynb files in language detection.
+*.ipynb linguist-detectable=false
