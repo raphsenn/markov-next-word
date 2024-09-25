@@ -15,31 +15,36 @@ I like Physics.
 I hate War.
 I love Schnitzel.
 I love Science.
-I love water.
 ```
 
 ### Mapping words to next words.
 
 ```console
-i -> [like, like, hate, love]
+i -> [like, like, hate, love, love]
 like -> [math, physics]
 hate -> [war]
-love -> [schnitzel, science, water]
+love -> [schnitzel, science]
 ```
+#### Graph representation
+
+![image](./res/graph.png)
 
 ### Mapping word and next_word to its probability.
 
 ```console
-(i, like) -> 0.5
-(i, hate) -> 0.25
-(i, love) -> 0.25
+(i, like) -> 0.4
+(i, hate) -> 0.2
+(i, love) -> 0.4
 (like, math) -> 0.5
 (like, physics) -> 0.5
 (hate, war) -> 1.0
-(love, schnitzel) -> 0.33
-(love, science) -> 0.33
-(love, water) -> 0.33
+(love, schnitzel) -> 0.5
+(love, science) -> 0.5
 ```
+#### Graph representation with probabilitys
+
+![image](./res/graph_probs.png)
+
 ### Example using the model
 
 ```python
@@ -47,7 +52,7 @@ love -> [schnitzel, science, water]
 >>> mnw = MarkovNextWord()
 >>> mnw.train('data/test.txt')
 >>> mnw.word_to_nextwords
-{'i': ['like', 'like', 'hate', 'love', 'love', 'love'], 'like': ['math', 'physics'], 'hate': ['war'], 'love': ['schnitzel', 'science', 'water']}
+{'i': ['like', 'like', 'hate', 'love', 'love', 'love'], 'like': ['math', 'physics'], 'hate': ['war'], 'love': ['schnitzel', 'science']}
 >>> mnw.word_to_next_word_prob
-{('i', 'like'): 0.3333333333333333, ('i', 'hate'): 0.16666666666666666, ('i', 'love'): 0.5, ('like', 'math'): 0.5, ('like', 'physics'): 0.5, ('hate', 'war'): 1.0, ('love', 'schnitzel'): 0.3333333333333333, ('love', 'science'): 0.3333333333333333, ('love', 'water'): 0.3333333333333333}
+{('i', 'like'): 0.4, ('i', 'hate'): 0.2, ('i', 'love'): 0.4, ('like', 'math'): 0.5, ('like', 'physics'): 0.5, ('hate', 'war'): 1.0, ('love', 'schnitzel'): 0.5, ('love', 'science'): 0.5}
 ```
