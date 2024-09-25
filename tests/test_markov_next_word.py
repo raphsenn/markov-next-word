@@ -6,12 +6,11 @@ from src.markov_next_word import MarkovNextWord
 def test_train() -> None:
     mnw = MarkovNextWord()
     mnw.train("data/test.txt")
-    assert mnw.word_to_nextwords == {'i': ['like', 'like', 'love'], 'like': ['photography', 'science'], 'love': ['mathematics']}
+    assert mnw.word_to_nextwords == {'i': ['like', 'like', 'hate', 'love', 'love', 'love'], 'like': ['math', 'physics'], 'hate': ['war'], 'love': ['schnitzel', 'science', 'water']}
 
 def test_next_word_prediction() -> None:
     mnw = MarkovNextWord()
     mnw.train("data/test.txt")
-    assert mnw.predict_next_words('I') == [('like', 0.6666666666666666), ('love', 0.3333333333333333)]
-    assert mnw.predict_next_words('i') == [('like', 0.6666666666666666), ('love', 0.3333333333333333)]
-    assert sorted(mnw.predict_next_words('like')) == [('photography', 0.5), ('science', 0.5)]
-    assert mnw.predict_next_words('love') == [('mathematics', 1.0)]
+    assert mnw.predict_next_words('I') == [('love', 0.5), ('like', 0.3333333333333333), ('hate', 0.16666666666666666)]
+    assert mnw.predict_next_words('i') == [('love', 0.5), ('like', 0.3333333333333333), ('hate', 0.16666666666666666)]
+    assert mnw.predict_next_words('hate') == [('war', 1.0)]
