@@ -13,5 +13,5 @@ def test_next_word_prediction() -> None:
     mnw.train("data/test.txt")
     assert mnw.predict_next_words('I') == [('like', 0.6666666666666666), ('love', 0.3333333333333333)]
     assert mnw.predict_next_words('i') == [('like', 0.6666666666666666), ('love', 0.3333333333333333)]
-    assert mnw.predict_next_words('like') == [('photography', 0.5), ('science', 0.5)]
+    assert sorted(mnw.predict_next_words('like')) == [('photography', 0.5), ('science', 0.5)]
     assert mnw.predict_next_words('love') == [('mathematics', 1.0)]
