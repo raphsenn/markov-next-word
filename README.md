@@ -27,13 +27,13 @@ sequence_length = 10
 NextWordPrediction.generate_text(input_text, sequence_length)
 ```
 
-#### generated Output
+#### Generated output
 ```console
 love to my self to my friend and in thy heart
 ```
 
 ## What is a markov property?
-In a process where the next state depends only on the current state is called markov property.
+In a process where the next state depends only on the current state, this property is called markov property.
 A sequence of events which follow the Markov property is referred to as the Markov Chain.
 
 ## Next word prediction using markov property
