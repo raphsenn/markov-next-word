@@ -1,7 +1,9 @@
 # markov-next-word
-Next word prediction using markov chains and python.
+Next word prediction with no numpy (just a little bit for random stuff), no pytorch, no neural networks, no lstm, no transformers and so on.
 
-## Usage
+* Just 60 lines of raw python and a little bit of math, enjoy ;)
+
+## Usage (with all of shakespeare -> generate shakespeare like text)
 
 #### Import and create a model.
 
