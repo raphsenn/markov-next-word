@@ -52,9 +52,14 @@ A sequence of events which follow the Markov property is referred to as the Mark
 * Rule 2: Cloudy → next day: 50% rain, 50% sun, 0% cloudy.
 * Rule 3: Rainy → next day: 90% cloudy, 10% rain, 0% rain.
 
-###### The stochastic matrix could look like this:
+###### The stochastic matrix would look like this:
 
-![image](./res/weather.png)
+```console
+        sun, cloudy, rain
+sun     [[0, 0.2, 0.8],
+cloudy  [0.5, 0, 0.5],
+rain    [0.1, 0.9, 0]]
+```
 
 ##### Weather simulation
 
