@@ -1,6 +1,37 @@
 # markov-next-word
 Next word prediction using markov chains and python.
 
+## Usage
+
+#### Import and create a model.
+
+```python
+src.markov_next_word import MarkovNextWord
+NextWordPrediction = MarkovNextWord()
+```
+#### Train the model with your text data.
+
+```python
+# Replace data/shakespeare.txt with your data.
+NextWordPrediction.train('data/shakespeare.txt')
+```
+
+#### Generate text
+
+```python
+# Generate text after love.
+input_text = 'love'
+
+# Num of words to generate.
+sequence_length = 10
+NextWordPrediction.generate_text(input_text, sequence_length)
+```
+
+#### generated Output
+```console
+love to my self to my friend and in thy heart
+```
+
 ## What is a markov property?
 In a process where the next state depends only on the current state is called markov property.
 A sequence of events which follow the Markov property is referred to as the Markov Chain.
