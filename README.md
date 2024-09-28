@@ -3,6 +3,19 @@ Next word prediction with no numpy (just a little bit for random stuff), no pyto
 
 * Just 60 lines of raw python and a little bit of math, enjoy ;)
 
+###  Generated text using the model (trained with sakespeare)
+
+```console
+Input:  love
+Output: love to my self to my friend and in thy heart
+
+Input:  sweet
+Output: sweet love that i have seen the world will bear thine 
+
+Input:  i
+Output: i am not the world s best
+```
+
 ## Usage (with all of shakespeare -> generate shakespeare like text)
 
 #### Import and create a model.
