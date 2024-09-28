@@ -1,5 +1,5 @@
 # markov-next-word
-Next word prediction with no numpy (just a little bit for random stuff), no pytorch, no neural networks, no lstm, no transformers and so on.
+Next word prediction using markov chains no numpy (using numpy only for random choices), no pytorch, no neural networks, no lstm, no transformers and so on.
 
 * Just 60 lines of raw python and a little bit of math, enjoy ;)
 
